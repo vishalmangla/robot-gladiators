@@ -30,7 +30,7 @@ var enemyAttack = 12;
 var fight = function(enemyName) {
   //repeat and execute as long as the enemy-robot is alive
 
-  while (enemyHealth >0) { 
+  while (enemyHealth > 0 && playerHealth > 0) { 
 
   // Alert players that they are starting the round
   window.alert("Welcome to Robot Gladiators!");
@@ -49,6 +49,8 @@ var fight = function(enemyName) {
     // check enemy's health
     if (enemyHealth <= 0) {
       window.alert(enemyName + " has died!");
+      //Break out if the enemy has died 
+      break;
     } else {
       window.alert(enemyName + " still has " + enemyHealth + " health left.");
     }
@@ -62,6 +64,7 @@ var fight = function(enemyName) {
     // check player's health
     if (playerHealth <= 0) {
       window.alert(playerName + " has died!");
+      break;
     } else {
       window.alert(playerName + " still has " + playerHealth + " health left.");
     }
